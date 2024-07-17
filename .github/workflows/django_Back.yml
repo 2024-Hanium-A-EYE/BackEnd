@@ -1,4 +1,4 @@
-name: Django CI
+name: Django Back CI
 
 on:
   push:
@@ -6,25 +6,51 @@ on:
   pull_request:
     branches: [ "main-Back" ]
 
+# 수동으로 해당 worflow 실행 지정
+# workflow_dispatch:
+
+permissions:
+  contents: read
+  
+env:
+  S3_BUCKET_NAME: S3_Back_End
+  AWS_REGION: ap-northeast-2
+  
 jobs:
   build:
-
-    runs-on: ubuntu 20.04
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.6]
-
+	
+    runs-on: ubuntu-20.04
+		strategy:
+			max-parallel: 4
+			matrix:
+				python-version: [3.6]
+    
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v2
+    
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+	    uses: actions/setup-python@v2
+	    with:
+		    python-version: ${{ matrix.python-version }}
+      
+		- name: Install Dependecies
+			run: |
+				python -m pip install --upgrade pip
+				pip install -r requirements.txt
+	  - name: Run Tests
+			  run: |
+				  pytest 
+
+    - name: Make zip file
+      run: zip -r ./practice-deploy.zip .
+      shell: bash
+        
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
       with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Run Tests
-      run: |
-        python manage.py test
+        aws-access-key-id: ${{ secrets.TRIAL_0 }} 
+        aws-secret-access-key: ${{ secrets.TRIAL_1 }} 
+        aws-region: ${{ env.AWS_REGION }}
+   
+    - name: Upload to S3
+      run: aws s3 cp --region ap-northeast-2 ./practice-deploy.zip s3://$S3_BUCKET_NAME/practice-deploy.zip
