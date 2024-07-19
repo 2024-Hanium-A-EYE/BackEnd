@@ -2,9 +2,7 @@ name: Django Back CI
 
 on:
   push:
-    branches: [ "main-Back" ]
-  pull_request:
-    branches: [ "main-Back" ]
+    branches: [ "main" ]
 
 # 수동으로 해당 worflow 실행 지정
 # workflow_dispatch:
@@ -19,24 +17,24 @@ env:
 jobs:
   continuous-integration:
   
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
-      max-parallel: 4
+      max-parallel: 1
       matrix:
         python-version: [3.6]
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
 
     - name: Install Dependecies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r dependencies.txt
 
     - name: Run Tests
       run: |
@@ -44,7 +42,7 @@ jobs:
 
   continuous-deployment:
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     needs: [ continuous-integration ]
 
     steps:
