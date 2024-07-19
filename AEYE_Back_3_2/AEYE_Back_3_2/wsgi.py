@@ -1,5 +1,5 @@
 """
-WSGI config for hanium_2024_aeye_back_3_2 project.
+WSGI config for AEYE_Back_3_2 project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hanium_2024_aeye_back_3_2.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AEYE_Back_3_2.settings')
 
 application = get_wsgi_application()
