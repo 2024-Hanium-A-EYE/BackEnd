@@ -1,4 +1,4 @@
-"""hanium_2024_aeye_AI_3_2 URL Configuration
+"""AEYE_Back_3_2 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/

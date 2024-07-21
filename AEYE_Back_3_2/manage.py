@@ -6,7 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hanium_2024_aeye_AI_3_2.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AEYE_Back_3_2.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
