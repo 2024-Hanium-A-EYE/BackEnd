@@ -3,7 +3,8 @@ from rest_framework.routers import DefaultRouter
 from .views import DataViewSet
 
 router = DefaultRouter()
-router.register(r'mymodels', DataViewSet)
+router.register(r'front', DataViewSet)
+router.regi
 
 urlpatterns = [
     path('', include(router.urls)),
