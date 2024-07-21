@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # update system
-sudo apt update && apt install figlet -y
+sudo apt update && sudo apt install figlet -y
 
 figlet Welcome To
 figlet AEYE Back
