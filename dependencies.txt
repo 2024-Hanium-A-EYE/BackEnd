@@ -1,0 +1,12 @@
+# Django Web Framework
+Django == 3.2
+
+# REST API Framework
+djangorestframework == 3.13.1
+
+#request
+requests
+
+#npm
+npm
+
