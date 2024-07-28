@@ -14,16 +14,16 @@ jobs:
 
     steps:
     - name: Check out repository
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
     
     - name: Set up Python 3.6
-    - run: sudo apt-get install python3.6 python3.6-venv python3.6-dev
+      run: sudo apt-get install python3.6 python3.6-venv python3.6-dev
 
-    - name : Set up Python 3.6
-    - run: python3.6 -m venv venv
+    - name : Create virtual environment
+      run: python3.6 -m venv venv
       
     - name: Install Dependecies
-    - run: |
+      run: |
         python -m pip install --upgrade pip
         pip install -r dependencies.txt
 
