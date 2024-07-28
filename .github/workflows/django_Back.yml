@@ -17,7 +17,9 @@ jobs:
       uses: actions/checkout@v3
     
     - name: Set up Python 3.6
-      run: sudo apt-get install python3.6 python3.6-venv python3.6-dev
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.6
 
     - name : Create virtual environment
       run: python3.6 -m venv venv
