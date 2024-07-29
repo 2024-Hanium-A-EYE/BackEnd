@@ -26,33 +26,51 @@ Python 버전은 AI 서버가 요구하는 Tensorflow 버전이 파이선 3.6에
 ## 서버 디렉토리 구성
 
 ```
-BackEnd/ 
-├── appspec.yml
-├── BackEnd_automate.sh   # AWS EC2 인스턴스 초기화를 위한 쉘
-├── dependencies.txt   # pip 설치를 위한 dependencies
+.
+├── AEYE_Back_3_2/   # AEYE WEB Django 서버
+│   ├── AEYE_Back_3_2/
+│   │   ├── __init__.py
+│   │   ├── __pycache__/
+│   │   ├── asgi.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── data/    # AEYE API 정의
+│   │   ├── __init__.py
+│   │   ├── __pycache__/
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── migrations/
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── signals.py
+│   │   ├── tests/   # AEYE 테스트 케이스 정의
+│   │   │   ├── __init__.py
+│   │   │   └── test_api.py
+│   │   ├── tests.py
+│   │   ├── urls.py
+│   │   └── views.py
+│   ├── db.sqlite3
+│   ├── manage.py
+│   └── pytest.ini
+├── AEYE_Front/   # AEYE WEB Front
+├── BackEnd_automate.sh
+├── Docker/   # Docker 파일
+│   ├── Django/   # Back-End를 위한 도커 파일
+│   │   └── Dockerfile
+│   ├── Next_js/   # Fron-End를 위한 도커 파일
+│   │   └── Dockerfile
+│   ├── MySQL/   # DataBase를 위한 도커 파일
+│   │   └── Dockerfile
+│   └── docker-complose.yml
 ├── LICENSE
 ├── README.md
-├── AEYE_Front/   # AEYE WEB Front
-└── AEYE_Back_3_2/   # AEYE WEB Django 서버
-    ├── db.sqlite3
-    ├── manage.py
-    ├── AEYE_Back_3_2/
-    └── data/    # AEYE API 정의
-        ├── admin.py
-        ├── apps.py
-        ├── models.py
-        ├── urls.py
-        ├── serializers.py
-        ├── tests.py
-        ├── views.py
-        ├── migrations/
-        └── tests/   # AEYE 테스트 케이스 정의
-            ├── __init__.py
-            └── test_api.py
+├── WEB_automate.sh   # AWS EC2 인스턴스 초기화를 위한 쉘
+├── appspec.yml
+├── dependencies.txt   # pip 설치를 위한 공통 dependencies
+├── dependencies_web_Back.txt   # pip 설치를 위한 Back dependencies
+└── dependencies_web_Front.txt   # pip 설치를 위한 Front dependencies
 ```   
-   
-
-
 
 ## 프로젝트 사용 방법
 아래는 Linux 환경에서 AEYE 프로젝트를 시작하는 명령어 입니다.  
