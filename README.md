@@ -11,7 +11,7 @@ test    : 코드 작성이 끝나고 테스트 중인 버전
 develop : 코드 작성중인 버전 
 ```
 
-**test 브랜치**에서는 `Github Actions`를 통해 CI가 진행되어 작성된 코드가 정의된 테스트 기준에 충족하는지 평가합니다.  
+**test 브랜치**에서는 `Github Actions`를 통해 CI가 진행되어 작성된 코드가 정의된 테스트 기준에 충족하는지 평가합니다. `pytest` 프레임워크를 통해 pytest 플더에 정의된 테스트 기준에 충족하는지 평가합니다. 
 
 
 
@@ -32,11 +32,12 @@ BackEnd/
 ├── dependencies.txt   # pip 설치를 위한 dependencies
 ├── LICENSE
 ├── README.md
-└── AEYE_Back_3_2   # AEYE WEB Django 서버
+├── AEYE_Front/   # AEYE WEB Front
+└── AEYE_Back_3_2/   # AEYE WEB Django 서버
     ├── db.sqlite3
     ├── manage.py
-    ├── AEYE_Back_3_2
-    └── data    # AEYE API 정의
+    ├── AEYE_Back_3_2/
+    └── data/    # AEYE API 정의
         ├── admin.py
         ├── apps.py
         ├── models.py
@@ -44,5 +45,34 @@ BackEnd/
         ├── serializers.py
         ├── tests.py
         ├── views.py
-        └── migrations
+        ├── migrations/
+        └── tests/   # AEYE 테스트 케이스 정의
+            ├── __init__.py
+            └── test_api.py
+```   
+   
+
+
+
+## 프로젝트 사용 방법
+아래는 Linux 환경에서 AEYE 프로젝트를 시작하는 명령어 입니다.  
+```bash
+./WEB_automate.sh
 ```
+Shell을 시작하면 AEYE 웹 서버를 시작하기 위해 필요한 `dependencies`를 설치하고, Docker를 설치한 후, 본 프로젝트에서 정의한 Docker Compose를 통해 서버를 시작합니다. 
+
+## REST API EndPoint
+아래는 AEYE 웹 벡엔드 서버에서 제공하는 REST API EndPoint 입니다. HTTP POST 요청을 할 경우, 다음 주소를 이용하면 됩니다.
+```json
+https://127.0.0.1:8000/api/data/ 
+```
+
+## JSON 데이터 형식
+아래는 Front-End에서 Back-End 서버로 보내야 하는 JSON 데이터의 예제입니다. `name` 은 `CharField` 이며, `date` 는 `DateField` 입니다.
+```json
+{
+  "name": "John Doe",
+  "date": "2024-07-28"
+}
+```
+

@@ -4,7 +4,6 @@ from .views import DataViewSet
 
 router = DefaultRouter()
 router.register(r'front', DataViewSet)
-router.regi
 
 urlpatterns = [
     path('', include(router.urls)),

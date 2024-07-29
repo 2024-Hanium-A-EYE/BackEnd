@@ -10,36 +10,22 @@ import requests
 
 class DataViewSet(viewsets.ModelViewSet):
     queryset = DataModel.objects.all()
-    serialzer = DataSerializer
+    serializer = DataSerializer
 
-    # GET 요청에 대한 로직 정의 (목록 조회)
-    def list (self, request) :
-        queryset = self.get_queryset()
-        serializer = DataSerializer(queryset, many=True)
-        return Response(serializer.data)
-    
-    # POST 요청에 대한 로직 정의 (객체 생성)
     def create(self, request) :
         serializer = DataSerializer(data = request.data)
         
         if serializer.is_valid() :
             print("Valid Request!!")
+
+            ## 데이터베이스 정의 ##
             serializer.save()
-
-            # get image
-            # image_file = Image path
-            url = "AI Server API"
             
-            # make JSON FILES
-            files = {'image' : 'imagefile'}
-            response = requests.post(url, files = files)
-
-            if response.status_code == 201:
-                data = response.json()
-                return JsonResponse(data, safe = False, status = 201)
-            else :
-                return JsonResponse("error", status = response.status_code)
+            ####################
+            
+            return Response(status = status.HTTP_200_OK)
         
         print("Invalid Request!!")
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+    
     
