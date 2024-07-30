@@ -54,7 +54,6 @@ Python 버전은 AI 서버가 요구하는 Tensorflow 버전이 파이선 3.6에
 │   ├── manage.py
 │   └── pytest.ini
 ├── AEYE_Front/   # AEYE WEB Front
-├── BackEnd_automate.sh
 ├── Docker/   # Docker 파일
 │   ├── Django/   # Back-End를 위한 도커 파일
 │   │   └── Dockerfile
@@ -93,4 +92,17 @@ https://127.0.0.1:8000/api/data/front/
   "date": "2024-07-28"
 }
 ```
+
+## Port 구성
+아래는 AEYE Web 프로젝트에서 사용하는 포트를 정의했습니다.
+```bash
+Django : 8000
+Next.js : 80
+MySQL : 3306
+```
+
+## AWS 환경
+**인스턴스 유형** : t2.micro  
+**AMI** : ubuntu-20.04 (ami-0cc095efd4953d3fc )
+
 
