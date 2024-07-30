@@ -63,7 +63,7 @@ uninstall_docker() {
   sudo apt purge docker-ce docker-ce-cli containerd.io
 
   if [ $? -eq 0 ]; then
-
+    echo -e "${RED}[1/$total_progress] ${NC}Succeed to Uninstall docker"
   else
     install_status_VAR=1
     echo -e "${RED}[1/$total_progress] ${NC}Failed to Uninstall docker"
