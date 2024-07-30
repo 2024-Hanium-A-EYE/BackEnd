@@ -2,6 +2,8 @@ FROM python:3.6-slim AS aeye_web_back
 
 WORKDIR /app
 
+ENV DEBIAN_FRONTEND noninteractive
+ENV DEBCONF_NOWARNINGS="yes"
 
 FROM aeye_web_back AS deps
 
