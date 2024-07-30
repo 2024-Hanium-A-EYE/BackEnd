@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: Docker/Django/Dockerfile
+    image: aeye_web_back:1.0
+    container_name: aeye_web_back
+    ports:
+      - "80:80"
+    volumes:
+      - ../AEYE_Back_3_2/:/app/
+    command: python3.6 manage.py runserver 0.0.0.0:80

@@ -1,28 +1,24 @@
-FROM python:3.6-slim AS aeye_web_front
+FROM node:18-alpine AS aeye_web_front
 
 WORKDIR /app
+COPY ./AEYE_Front/* /app/
 
 
 FROM aeye_web_front AS deps
 
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libpq-dev \
-    git \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+COPY package*.json ./
 
-COPY dependencies_web_Back.txt /app/
-
-RUN pip install --upgrade pip
-RUN pip install -r dependencies_web_Back.txt
+RUN npm install
 
 
-FROM deps AS runner
-COPY /AEYE_Back_3_2/* /app/
+FROM deps AS build
 
-# 포트 노출
-EXPOSE 8000
+RUN npm run build
+COPY --from=builder /app ./
+RUN npm install --production
 
-# 장고 서버 실행 명령
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+FROM build AS runner
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
