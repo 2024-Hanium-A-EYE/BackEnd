@@ -90,7 +90,7 @@ install_docker () {
 
 install() {
 
-  if [ $install_status_VAR -eq 0]; then
+  if [ $install_status_VAR -eq 0 ]; then
     echo -e "${BLUE}[1/$total_progress] ${NC}Uninstall Docker..."
     figlet Uninstall Docker
     uninstall_docker
