@@ -121,7 +121,7 @@ install
 run_server() {
   if [ $install_status_VAR -eq 0 ]; then
     echo -e "${BLUE}[4/$total_progress] ${NC}Run AEYE Web Server"
-    cd Docker && docker-compose up
+    cd Docker && sudo docker-compose up
   else
     echo -e "${RED}[4/$total_progress] ${NC}Failed to Run AEYE Web Server due to install_status_VAR = 1"
   fi

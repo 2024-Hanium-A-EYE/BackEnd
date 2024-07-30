@@ -27,9 +27,9 @@ RUN pip install -r dependencies_web.txt
 RUN pip install -r dependencies_web_Back.txt
 
 FROM deps AS runner
-COPY AEYE_Back_3_2/* /app/
+COPY /AEYE_Back_3_2/ /app/
 
 # 포트 노출
-EXPOSE 8000
+EXPOSE 80
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:80"]
