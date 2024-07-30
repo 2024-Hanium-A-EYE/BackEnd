@@ -97,7 +97,12 @@ https://127.0.0.1:8000/api/data/front/
 아래는 AEYE Web 프로젝트에서 사용하는 포트를 정의했습니다.
 ```bash
 Django : 8000
-Next.js : 3000
+Next.js : 80
 MySQL : 3306
 ```
+
+## AWS 환경
+**인스턴스 유형** : t2.micro  
+**AMI** : ubuntu-20.04 (ami-0cc095efd4953d3fc )
+
 
