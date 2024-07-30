@@ -1,8 +1,8 @@
 # Django
-django == 3.2
+django==3.2
 
 # REST API Framework
-djangorestframework == 3.13.1
+djangorestframework==3.13.1
 
 #request
 requests

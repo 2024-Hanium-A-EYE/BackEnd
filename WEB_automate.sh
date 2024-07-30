@@ -9,7 +9,7 @@ NC='\033[0m' # No Color (Defualt colour)
 ##################################################################
 install_status_VAR=1
 
-total_progress=2
+total_progress=3
 
 print_AEYE_WEB() {
   clear
@@ -46,65 +46,91 @@ initialize_system
 
 ########################################################################
 
-intialize_docker_install () {
-  sudo apt install -y \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
+uninstall_docker() {
+  sudo systemctl stop docker.socket
+  sudo systemctl disable docker.socket
+  sudo systemctl stop docker.service
+
+  dpkg -l | grep -i docker 
+  sudo apt-get purge -y docker-*
+  sudo apt-get purge -y python3-docker*
   
-  curl -fsSL https://get.docker.com -o docker-install.sh
+  dpkg -l | grep -i docker 
+
+  sudo rm -rf /var/lib/docker* /etc/docker*
+  sudo rm -rf /var/run/docker.sock /var/run/dockershim.sock /var/run/docker.pid
+  sudo rm -rf /var/lib/dockershim /var/run/docker /var/run/dockershim.sock
+  sudo apt purge docker-ce docker-ce-cli containerd.io
 
   if [ $? -eq 0 ]; then
-    echo -e "${BLUE}[1/$total_progress] ${NC}Docker install initialization Succeed."
+
   else
     install_status_VAR=1
-    echo -e "${RED}[1/$total_progress] ${NC}Dokcer install initialization Failed."
+    echo -e "${RED}[1/$total_progress] ${NC}Failed to Uninstall docker"
   fi
 }
 
 install_docker () {
-  intialize_docker_install
   
-  sudo apt update
+  sudo apt-get update
+  sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  sudo apt-get update
+    
   if [ $? -eq 0 ]; then
-    sh ./docker-install.sh --dry-run    
-
-    # Create the docker group.
-    sudo groupadd docker
+    
+    sudo apt-get install docker-ce docker-ce-cli containerd.io
   else
     install_status_VAR=1
-    echo -e "${RED}[1/$total_progress] ${NC}Failed to install docker"
+    echo -e "${RED}[2/$total_progress] ${NC}Failed to install docker"
   fi
   
 }
 
 install() {
+  if [$install_status_VAR -eq 0]; then
+    echo -e "${BLUE}[1/$total_progress] ${NC}Uninstall Docker..."
+    figlet Uninstall Docker
+    uninstall_docker
+  else
+    echo -e "${RED}[1/$total_progress] ${NC}Failed to uninstall Docker due to install_status_VAR = 1"
+  fi
 
   if [ $install_status_VAR -eq 0 ]; then
-    echo -e "${BLUE}[1/$total_progress] ${NC}Install Docker..."
+    echo -e "${BLUE}[2/$total_progress] ${NC}Install Docker..."
     figlet Install Docker
     install_docker 
   else
-    echo -e "${RED}[1/$total_progress] ${NC}Failed to install Docker due to install_status_VAR = 1"
+    echo -e "${RED}[2/$total_progress] ${NC}Failed to install Docker due to install_status_VAR = 1"
   fi
     
+  if [ $install_status_VAR -eq 0 ]; then
+    echo -e "${BLUE}[3/$total_progress] ${NC}Install Docker Compose...."
+    figlet Install 
+    figlet Docker Compose
+    sudo apt install docker-compose -y
+  else
+    echo -e "${RED}[3/$total_progress] ${NC}Failed to install Docker Compose due to install_status_VAR = 1"
+  fi
 }
 
 install
 
-########################################################################
-
 run_server() {
-
-  if [ $install_status_VAR -eq 0]; then
-    echo -e "${BLUE}[2/$total_progress] ${NC} running server..."
-    figlet AEYE Server
-    cd Docker && docker-compose up -d
+  if [ $install_status_VAR -eq 0 ]; then
+    echo -e "${BLUE}[4/$total_progress] ${NC}Run AEYE Web Server"
+    cd Docker && docker-compose up
   else
-    echo -e "${RED}[2/$total_progress] ${NC}Failed to run server"
+    echo -e "${RED}[4/$total_progress] ${NC}Failed to Run AEYE Web Server due to install_status_VAR = 1"
   fi
-
+  
 }
 
-run_server
+# run server
+#figlet Start Server
+#cd AEYE_AI_Back_3_2
+#python manage.py runserver
+
+
+
