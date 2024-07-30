@@ -116,10 +116,18 @@ install() {
 
 install
 
-# run server
-#figlet Start Server
-#cd AEYE_AI_Back_3_2
-#python manage.py runserver
+########################################################################
 
+run_server() {
 
+  if [ $install_status_VAR -eq 0]; then
+    echo -e "${BLUE}[3/$total_progress] ${NC} running server..."
+    figlet AEYE Server
+    cd Docker && docker-compose up -d
+  else
+    echo -e "${RED}[3/$total_progress] ${NC}Failed to run server"
+  fi
 
+}
+
+run_server
