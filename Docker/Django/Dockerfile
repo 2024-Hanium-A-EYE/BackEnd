@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-utils \
     && rm -rf /var/lib/apt/lists/*
 
-COPY dependencies.txt /app/
+COPY dependencies_web.txt /app/
 COPY dependencies_web_Back.txt /app/
 
 RUN pip install --upgrade pip
