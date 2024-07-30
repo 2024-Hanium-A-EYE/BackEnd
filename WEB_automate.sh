@@ -62,12 +62,6 @@ uninstall_docker() {
   sudo rm -rf /var/lib/dockershim /var/run/docker /var/run/dockershim.sock
   sudo apt purge -y docker-ce docker-ce-cli containerd.io
 
-  if [ $? -eq 0 ]; then
-    echo -e "${BLUE}[1/$total_progress] ${NC}Succeed to Uninstall docker"
-  else
-    install_status_VAR=1
-    echo -e "${RED}[1/$total_progress] ${NC}Failed to Uninstall docker"
-  fi
 }
 
 install_docker () {
