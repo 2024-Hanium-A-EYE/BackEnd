@@ -67,17 +67,17 @@ Python 버전은 AI 서버가 요구하는 Tensorflow 버전이 파이선 3.6에
 │   └── docker-complose.yml
 ├── LICENSE
 ├── README.md
-├── WEB_automate.sh   # AWS EC2 인스턴스 초기화를 위한 쉘
+├── AEYE_WEB.sh   # AWS EC2 인스턴스 초기화를 위한 쉘
 ├── appspec.yml
 ├── dependencies.txt   # pip 설치를 위한 공통 dependencies
 ├── dependencies_web_Back.txt   # pip 설치를 위한 Back dependencies
 └── dependencies_web_Front.txt   # pip 설치를 위한 Front dependencies
 ```   
 
-## 프로젝트 사용 방법
+## 프로젝트 패키지 실행
 아래는 Linux 환경에서 AEYE 프로젝트를 시작하는 명령어 입니다.  
 ```bash
-./WEB_automate.sh
+./AEYE_WEB.sh
 ```
 Shell을 시작하면 AEYE 웹 서버를 시작하기 위해 필요한 `dependencies`를 설치하고, Docker를 설치한 후, 본 프로젝트에서 정의한 Docker Compose를 통해 서버를 시작합니다. 
 
