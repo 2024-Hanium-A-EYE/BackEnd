@@ -53,12 +53,8 @@ intialize_docker_install () {
     gnupg \
     lsb-release
   
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg -y --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-  
-  echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-  
+  curl -fsSL https://get.docker.com -o docker-install.sh
+
   if [ $? -eq 0 ]; then
     echo -e "${BLUE}[1/$total_progress] ${NC}Docker install initialization Succeed."
   else
@@ -72,8 +68,8 @@ install_docker () {
   
   sudo apt update
   if [ $? -eq 0 ]; then
-    sudo apt install -y docker-ce docker-ce-cli containerd.io
-    
+    sh ./docker-install.sh --dry-run    
+
     # Create the docker group.
     sudo groupadd docker
   else
@@ -81,17 +77,6 @@ install_docker () {
     echo -e "${RED}[1/$total_progress] ${NC}Failed to install docker"
   fi
   
-}
-
-install_nvidia_docker() {
-  distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
-    && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
-    && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-   
-  sudo apt update
-  sudo apt install -y nvidia-docker2
-
-  sudo systemctl restart docker
 }
 
 install() {
@@ -104,14 +89,6 @@ install() {
     echo -e "${RED}[1/$total_progress] ${NC}Failed to install Docker due to install_status_VAR = 1"
   fi
     
-  if [ $install_status_VAR -eq 0 ]; then
-    echo -e "${BLUE}[2/$total_progress] ${NC}Install Nvidia Doocker...."
-    figlet Install 
-    figlet Nvidia Docker
-    install_nvidia_docker
-  else
-    echo -e "${RED}[2/$total_progress] ${NC}Failed to install Nvidia Docker due to install_status_VAR = 1"
-  fi
 }
 
 install
@@ -121,11 +98,11 @@ install
 run_server() {
 
   if [ $install_status_VAR -eq 0]; then
-    echo -e "${BLUE}[3/$total_progress] ${NC} running server..."
+    echo -e "${BLUE}[2/$total_progress] ${NC} running server..."
     figlet AEYE Server
     cd Docker && docker-compose up -d
   else
-    echo -e "${RED}[3/$total_progress] ${NC}Failed to run server"
+    echo -e "${RED}[2/$total_progress] ${NC}Failed to run server"
   fi
 
 }

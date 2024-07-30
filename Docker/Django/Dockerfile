@@ -12,17 +12,17 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+COPY dependencies.txt /app/
 COPY dependencies_web_Back.txt /app/
 
 RUN pip install --upgrade pip
+RUN pip install -r dependencies.txt
 RUN pip install -r dependencies_web_Back.txt
 
-
 FROM deps AS runner
-COPY /AEYE_Back_3_2/* /app/
+COPY ./AEYE_Back_3_2/* /app/
 
 # 포트 노출
 EXPOSE 8000
 
-# 장고 서버 실행 명령
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
