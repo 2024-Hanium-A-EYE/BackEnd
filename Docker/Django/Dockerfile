@@ -23,7 +23,7 @@ COPY dependencies_web.txt /app/
 COPY dependencies_web_Back.txt /app/
 
 RUN pip install --upgrade pip
-RUN pip install -r dependencies.txt
+RUN pip install -r dependencies_web.txt
 RUN pip install -r dependencies_web_Back.txt
 
 FROM deps AS runner
