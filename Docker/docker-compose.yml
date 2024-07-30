@@ -10,5 +10,5 @@ services:
     ports:
       - "80:80"
     volumes:
-      - /Django/:/app/
+      - ../AEYE_Back_3_2/:/app/
     command: python3.6 manage.py runserver 0.0.0.0:80
