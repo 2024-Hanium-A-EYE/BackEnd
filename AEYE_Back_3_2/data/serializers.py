@@ -6,4 +6,4 @@ from .models import DataModel
 class DataSerializer(serializers.ModelSerializer):
     class Meta:
         model = DataModel
-        fields = '__all__'
+        fields = ['name', 'date', 'image']
