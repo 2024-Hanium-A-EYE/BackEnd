@@ -16,7 +16,7 @@ class DataViewSet(viewsets.ModelViewSet):
         serializer = DataSerializer(data = request.data)
         
         if serializer.is_valid() :
-            print("Valid Request!!")
+            log.print("Valid Request!!")
 
             ## 데이터베이스 정의 ##
             serializer.save()
@@ -25,7 +25,7 @@ class DataViewSet(viewsets.ModelViewSet):
             
             return Response(status = status.HTTP_200_OK)
         
-        print("Invalid Request!!")
+        log.print("Invalid Request!!")
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
     
     
