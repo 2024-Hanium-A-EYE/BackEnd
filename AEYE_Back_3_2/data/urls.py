@@ -12,7 +12,9 @@ router.register(r'front', Request_Data_ViewSet)
 ['name', 'date', 'image']
 '''
 router.register(r'initate-ai', Initate_AI_ViewSet)
-
+'''
+['name']  //type == test or train
+'''
 
 urlpatterns = [
     path('', include(router.urls)),
