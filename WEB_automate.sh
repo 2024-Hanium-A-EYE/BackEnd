@@ -7,7 +7,7 @@ BLUE='\033[38;5;81m'
 NC='\033[0m' # No Color (Defualt colour)
 
 ##################################################################
-install_status_VAR=1
+install_status_vel=1
 
 total_progress=4
 
@@ -24,7 +24,7 @@ initialize_system() {
   sudo apt install -y
   
   if [ $? -eq 0 ]; then
-    install_status_VAR=0
+    install_status_vel=0
     echo "System package list updated successfully."
     echo -e "${BLUE}[0/$total_progress] ${NC}Install figlet..."
     sudo apt install figlet -y
@@ -33,7 +33,7 @@ initialize_system() {
       clear
       print_AEYE_WEB
     else
-      install_status_VAR=1
+      install_status_vel=1
       echo -e "${RED}[0/$total_progress] Failed to install." ${NC}
     fi
     
@@ -76,7 +76,7 @@ install_docker () {
     
     sudo apt-get -y install docker-ce docker-ce-cli containerd.io
   else
-    install_status_VAR=1
+    install_status_vel=1
     echo -e "${RED}[2/$total_progress] ${NC}Failed to install docker"
   fi
   
@@ -84,40 +84,40 @@ install_docker () {
 
 install() {
 
-  if [ $install_status_VAR -eq 0 ]; then
+  if [ $install_status_vel -eq 0 ]; then
     echo -e "${BLUE}[1/$total_progress] ${NC}Uninstall Docker..."
     figlet Uninstall Docker
     uninstall_docker
   else
-    echo -e "${RED}[1/$total_progress] ${NC}Failed to uninstall Docker due to install_status_VAR = 1"
+    echo -e "${RED}[1/$total_progress] ${NC}Failed to uninstall Docker due to install_status_vel = 1"
   fi
 
-  if [ $install_status_VAR -eq 0 ]; then
+  if [ $install_status_vel -eq 0 ]; then
     echo -e "${BLUE}[2/$total_progress] ${NC}Install Docker..."
     figlet Install Docker
     install_docker 
   else
-    echo -e "${RED}[2/$total_progress] ${NC}Failed to install Docker due to install_status_VAR = 1"
+    echo -e "${RED}[2/$total_progress] ${NC}Failed to install Docker due to install_status_vel = 1"
   fi
     
-  if [ $install_status_VAR -eq 0 ]; then
+  if [ $install_status_vel -eq 0 ]; then
     echo -e "${BLUE}[3/$total_progress] ${NC}Install Docker Compose...."
     figlet Install 
     figlet Docker Compose
     sudo apt install docker-compose -y
   else
-    echo -e "${RED}[3/$total_progress] ${NC}Failed to install Docker Compose due to install_status_VAR = 1"
+    echo -e "${RED}[3/$total_progress] ${NC}Failed to install Docker Compose due to install_status_vel = 1"
   fi
 }
 
 install
 
 run_server() {
-  if [ $install_status_VAR -eq 0 ]; then
+  if [ $install_status_vel -eq 0 ]; then
     echo -e "${BLUE}[4/$total_progress] ${NC}Run AEYE Web Server"
     cd Docker && sudo docker-compose up
   else
-    echo -e "${RED}[4/$total_progress] ${NC}Failed to Run AEYE Web Server due to install_status_VAR = 1"
+    echo -e "${RED}[4/$total_progress] ${NC}Failed to Run AEYE Web Server due to install_status_vel = 1"
   fi
   
 }
