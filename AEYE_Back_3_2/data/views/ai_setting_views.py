@@ -1,5 +1,6 @@
 from .views import *
 from rest_framework import viewsets
+
 from data.models import Initiate_AI_Model
 from data.serializers import Initiate_AI_Serializer
 
@@ -14,7 +15,7 @@ class Initate_AI_ViewSet(viewsets.ModelViewSet):
 
         if serializer.is_valid() :
             
-            log.print_log("SUCCESS", "Initiate AI")
+            log.print_log("SUCCESS", "Initiate AI", '[Initiate]')
 
 
             if(request.data == 'train'):
