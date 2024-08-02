@@ -9,6 +9,7 @@ def send_image_to_ai_server(image_path, server_url):
         return reponse 
 
 
+# /api/data/front/ Receive ['name', 'date', 'Image']
 class Request_Data_ViewSet(viewsets.ModelViewSet):
     queryset = Request_Data_Model.objects.all().order_by('id')
     serializer_class = Request_Data_Serializer
@@ -29,9 +30,10 @@ class Request_Data_ViewSet(viewsets.ModelViewSet):
                     destination.write(chunk)
             log.print_log("SUCCESS", "Saved Image Data to Local Disk")
 
-
+            # AI Server로 전송 #
             response = send_image_to_ai_server(image_path, ip.AI_Server_Address_Inference)
-
+            ###################
+            
             if response.status_code == 200 :
 
                 log.print_log("SUCCESS", "Send Data To AI")

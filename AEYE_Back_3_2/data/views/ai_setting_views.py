@@ -3,7 +3,7 @@ from rest_framework import viewsets
 from data.models import Initiate_AI_Model
 from data.serializers import Initiate_AI_Serializer
 
-
+# /api/data/ai-inference/ Receive ['Image']
 class Initate_AI_ViewSet(viewsets.ModelViewSet):
     queryset = Initiate_AI_Model.objects.all()
     serializer = Initiate_AI_Serializer
