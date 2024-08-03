@@ -13,6 +13,9 @@ develop : 코드 작성중인 버전
 
 **test 브랜치**에서는 `Github Actions`를 통해 CI가 진행되어 작성된 코드가 정의된 테스트 기준에 충족하는지 평가합니다. `pytest` 프레임워크를 통해 pytest 플더에 정의된 테스트 기준에 충족하는지 평가합니다. 
 
+<p align="center">
+  <img src="./Image/Continuous_Integration.png">
+</p>
 
 
 ## 서버 환경
@@ -64,19 +67,23 @@ Python 버전은 AI 서버가 요구하는 Tensorflow 버전이 파이선 3.6에
 │   └── docker-complose.yml
 ├── LICENSE
 ├── README.md
-├── WEB_automate.sh   # AWS EC2 인스턴스 초기화를 위한 쉘
+├── install.sh   # AEYE WEB Package 설치
 ├── appspec.yml
 ├── dependencies.txt   # pip 설치를 위한 공통 dependencies
 ├── dependencies_web_Back.txt   # pip 설치를 위한 Back dependencies
 └── dependencies_web_Front.txt   # pip 설치를 위한 Front dependencies
 ```   
 
-## 프로젝트 사용 방법
+## 프로젝트 패키지 실행
 아래는 Linux 환경에서 AEYE 프로젝트를 시작하는 명령어 입니다.  
 ```bash
-./WEB_automate.sh
+./install.sh
 ```
 Shell을 시작하면 AEYE 웹 서버를 시작하기 위해 필요한 `dependencies`를 설치하고, Docker를 설치한 후, 본 프로젝트에서 정의한 Docker Compose를 통해 서버를 시작합니다. 
+
+<p align="center">
+  <img src="./Image/Continuous_Deployment.png">
+</p>
 
 ## REST API EndPoint
 아래는 AEYE 웹 벡엔드 서버에서 제공하는 REST API EndPoint 입니다. HTTP POST 요청을 할 경우, 다음 주소를 이용하면 됩니다.
