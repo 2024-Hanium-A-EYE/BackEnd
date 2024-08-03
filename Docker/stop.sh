@@ -1,0 +1,1 @@
+docker stop aeye_web_nginx aeye_web_back aeye_web_front
