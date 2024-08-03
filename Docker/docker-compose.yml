@@ -27,10 +27,10 @@ services:
     image: aeye_web_front:1.0
     container_name:  aeye_web_front
     ports:
-      - "80:80"
+      - "3000:3000"
     volumes:
       - ../AEYE_Front/:/app/
-    command: npm start
+    command: sh -c "npm run build && npm start"
     networks:
       - aeye_web
 

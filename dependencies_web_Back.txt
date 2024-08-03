@@ -9,3 +9,6 @@ requests
 
 # colorama
 colorama
+
+# pillow
+pillow
