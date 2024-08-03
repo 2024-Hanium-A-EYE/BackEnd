@@ -1,0 +1,3 @@
+[submodule "AEYE_Front"]
+	path = AEYE_Front
+	url = https://github.com/2024-Hanium-A-EYE/AEYE-FE.git

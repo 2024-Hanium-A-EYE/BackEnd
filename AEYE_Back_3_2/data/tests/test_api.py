@@ -19,3 +19,6 @@ def test_create_and_retrieve_data(api_client, user):
     response = api_client.post('/api/yourmodel/', {'name' : 'Test Name'}, format='json')
     assert response.status_code == 201
     assert reponse.data['name'] == 'Test Name'
+
+    
+    
