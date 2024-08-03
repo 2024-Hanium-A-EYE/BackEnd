@@ -1,0 +1,27 @@
+time="2024-08-03T18:30:33+09:00" level=warning msg="/Users/yoonchulchung/Documents/2024Hanium/BackEnd/develop/Docker/docker-compose.yml: `version` is obsolete"
+ Container aeye_web_front  Recreate
+ Container aeye_web_back  Recreate
+ Container aeye_web_front  Recreated
+ Container aeye_web_back  Recreated
+Attaching to aeye_web_back, aeye_web_front
+[2Kaeye_web_front  | 
+[2Kaeye_web_front  | > aeye@0.1.0 start
+[2Kaeye_web_front  | > next start
+[2Kaeye_web_front  | 
+[2Kaeye_web_front  |   ▲ Next.js 14.2.5
+[2Kaeye_web_front  |   - Local:        http://localhost:80
+[2Kaeye_web_front  | 
+[2Kaeye_web_front  |  ✓ Starting...
+[2Kaeye_web_front  | Error: Could not find a production build in the '.next' directory. Try building your app with 'next build' before starting the production server. https://nextjs.org/docs/messages/production-start-no-build-id
+[2Kaeye_web_front  |     at setupFsCheck (/app/node_modules/next/dist/server/lib/router-utils/filesystem.js:151:19)
+[2Kaeye_web_front  |     at async initialize (/app/node_modules/next/dist/server/lib/router-server.js:61:23)
+[2Kaeye_web_front  |     at async Server.<anonymous> (/app/node_modules/next/dist/server/lib/start-server.js:249:36)
+[2Kaeye_web_back   | Watching for file changes with StatReloader
+[2Kaeye_web_back   | Performing system checks...
+[2Kaeye_web_back   | 
+aeye_web_front exited with code 1
+[2Kaeye_web_back   | System check identified no issues (0 silenced).
+[2Kaeye_web_back   | August 03, 2024 - 09:30:34
+[2Kaeye_web_back   | Django version 3.2, using settings 'AEYE_Back_3_2.settings'
+[2Kaeye_web_back   | Starting development server at http://0.0.0.0:8000/
+[2Kaeye_web_back   | Quit the server with CONTROL-C.
