@@ -1,82 +1,10 @@
-time="2024-08-03T19:45:21+09:00" level=warning msg="/Users/yoonchulchung/Documents/2024Hanium/BackEnd/develop/Docker/docker-compose.yml: `version` is obsolete"
- nginx Pulling 
- 119661e64d8d Pulling fs layer 
- 8ab7f4b10893 Pulling fs layer 
- 887258d3911d Pulling fs layer 
- ba411a88d686 Pulling fs layer 
- 364353c854ba Pulling fs layer 
- c552e43a8e0a Pulling fs layer 
- 187432d3f323 Pulling fs layer 
- 980da08f5414 Pulling fs layer 
- 364353c854ba Waiting 
- c552e43a8e0a Waiting 
- 187432d3f323 Waiting 
- 980da08f5414 Waiting 
- ba411a88d686 Waiting 
- 8ab7f4b10893 Downloading [>                                                  ]  19.88kB/1.952MB
- 119661e64d8d Downloading [>                                                  ]  34.76kB/3.358MB
- 887258d3911d Downloading [==================================================>]     628B/628B
- 887258d3911d Verifying Checksum 
- 887258d3911d Download complete 
- 119661e64d8d Verifying Checksum 
- 119661e64d8d Download complete 
- 119661e64d8d Extracting [>                                                  ]  65.54kB/3.358MB
- 8ab7f4b10893 Downloading [==============================================>    ]  1.809MB/1.952MB
- 8ab7f4b10893 Downloading [==================================================>]  1.952MB/1.952MB
- 8ab7f4b10893 Verifying Checksum 
- 8ab7f4b10893 Download complete 
- 119661e64d8d Extracting [==================================================>]  3.358MB/3.358MB
- 119661e64d8d Pull complete 
- 8ab7f4b10893 Extracting [>                                                  ]  32.77kB/1.952MB
- 8ab7f4b10893 Extracting [==================================================>]  1.952MB/1.952MB
- 8ab7f4b10893 Pull complete 
- 887258d3911d Extracting [==================================================>]     628B/628B
- 887258d3911d Extracting [==================================================>]     628B/628B
- 887258d3911d Pull complete 
- ba411a88d686 Downloading [=====================================>             ]     721B/957B
- ba411a88d686 Downloading [==================================================>]     957B/957B
- ba411a88d686 Verifying Checksum 
- ba411a88d686 Download complete 
- ba411a88d686 Extracting [==================================================>]     957B/957B
- ba411a88d686 Extracting [==================================================>]     957B/957B
- 364353c854ba Downloading [==================================================>]     394B/394B
- 364353c854ba Verifying Checksum 
- 364353c854ba Download complete 
- ba411a88d686 Pull complete 
- 364353c854ba Extracting [==================================================>]     394B/394B
- 364353c854ba Extracting [==================================================>]     394B/394B
- 364353c854ba Pull complete 
- c552e43a8e0a Downloading [=============================>                     ]     720B/1.211kB
- c552e43a8e0a Downloading [==================================================>]  1.211kB/1.211kB
- c552e43a8e0a Verifying Checksum 
- c552e43a8e0a Download complete 
- c552e43a8e0a Extracting [==================================================>]  1.211kB/1.211kB
- c552e43a8e0a Extracting [==================================================>]  1.211kB/1.211kB
- c552e43a8e0a Pull complete 
- 980da08f5414 Downloading [>                                                  ]  131.1kB/12.92MB
- 187432d3f323 Downloading [=========================>                         ]     720B/1.399kB
- 187432d3f323 Downloading [==================================================>]  1.399kB/1.399kB
- 187432d3f323 Verifying Checksum 
- 187432d3f323 Download complete 
- 187432d3f323 Extracting [==================================================>]  1.399kB/1.399kB
- 187432d3f323 Extracting [==================================================>]  1.399kB/1.399kB
- 187432d3f323 Pull complete 
- 980da08f5414 Downloading [============>                                      ]  3.209MB/12.92MB
- 980da08f5414 Downloading [==========================>                        ]  6.814MB/12.92MB
- 980da08f5414 Verifying Checksum 
- 980da08f5414 Download complete 
- 980da08f5414 Extracting [>                                                  ]  131.1kB/12.92MB
- 980da08f5414 Extracting [====>                                              ]   1.18MB/12.92MB
- 980da08f5414 Extracting [========================================>          ]  10.35MB/12.92MB
- 980da08f5414 Extracting [==================================================>]  12.92MB/12.92MB
- 980da08f5414 Pull complete 
- nginx Pulled 
- Container aeye_web_front  Creating
- Container aeye_web_back  Creating
- Container aeye_web_back  Created
- Container aeye_web_front  Created
- Container aeye_web_nginx  Creating
- Container aeye_web_nginx  Created
+time="2024-08-03T22:48:18+09:00" level=warning msg="/Users/yoonchulchung/Documents/2024Hanium/BackEnd/develop/Docker/docker-compose.yml: `version` is obsolete"
+ Container aeye_web_front  Recreate
+ Container aeye_web_back  Recreate
+ Container aeye_web_front  Recreated
+ Container aeye_web_nginx  Recreate
+ Container aeye_web_back  Recreated
+ Container aeye_web_nginx  Recreated
 Attaching to aeye_web_back, aeye_web_front, aeye_web_nginx
 [2Kaeye_web_nginx  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
 [2Kaeye_web_nginx  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
@@ -87,20 +15,20 @@ Attaching to aeye_web_back, aeye_web_front, aeye_web_nginx
 [2Kaeye_web_nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
 [2Kaeye_web_nginx  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
 [2Kaeye_web_nginx  | /docker-entrypoint.sh: Configuration complete; ready for start up
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: using the "epoll" event method
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: nginx/1.27.0
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: built by gcc 13.2.1 20231014 (Alpine 13.2.1_git20231014) 
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: OS: Linux 6.6.22-linuxkit
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: start worker processes
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: start worker process 29
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: start worker process 30
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: start worker process 31
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: start worker process 32
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: start worker process 33
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: start worker process 34
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: start worker process 35
-[2Kaeye_web_nginx  | 2024/08/03 10:45:28 [notice] 1#1: start worker process 36
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: using the "epoll" event method
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: nginx/1.27.0
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: built by gcc 13.2.1 20231014 (Alpine 13.2.1_git20231014) 
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: OS: Linux 6.6.22-linuxkit
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: start worker processes
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: start worker process 29
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: start worker process 30
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: start worker process 31
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: start worker process 32
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: start worker process 33
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: start worker process 34
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: start worker process 35
+[2Kaeye_web_nginx  | 2024/08/03 13:48:31 [notice] 1#1: start worker process 36
 [2Kaeye_web_front  | 
 [2Kaeye_web_front  | > aeye@0.1.0 build
 [2Kaeye_web_front  | > next build
@@ -109,7 +37,7 @@ Attaching to aeye_web_back, aeye_web_front, aeye_web_nginx
 [2Kaeye_web_back   | Performing system checks...
 [2Kaeye_web_back   | 
 [2Kaeye_web_back   | System check identified no issues (0 silenced).
-[2Kaeye_web_back   | August 03, 2024 - 10:45:29
+[2Kaeye_web_back   | August 03, 2024 - 13:48:32
 [2Kaeye_web_back   | Django version 3.2, using settings 'AEYE_Back_3_2.settings'
 [2Kaeye_web_back   | Starting development server at http://0.0.0.0:8000/
 [2Kaeye_web_back   | Quit the server with CONTROL-C.
@@ -121,74 +49,130 @@ Attaching to aeye_web_back, aeye_web_front, aeye_web_nginx
 [2Kaeye_web_front  |    Collecting page data ...
 [2Kaeye_web_front  |    Generating static pages (0/11) ...
 [2Kaeye_web_front  |    Generating static pages (2/11) 
-[2Kaeye_web_front  | TypeError: fetch failed
-[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
-[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
-[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED ::1:3000
-[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
-[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
-[2Kaeye_web_front  |     errno: -111,
-[2Kaeye_web_front  |     code: 'ECONNREFUSED',
-[2Kaeye_web_front  |     syscall: 'connect',
-[2Kaeye_web_front  |     address: '::1',
-[2Kaeye_web_front  |     port: 3000
-[2Kaeye_web_front  |   },
-[2Kaeye_web_front  |   digest: '3576187290'
-[2Kaeye_web_front  | }
-[2Kaeye_web_front  | TypeError: fetch failed
-[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
-[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
-[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED ::1:3000
-[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
-[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
-[2Kaeye_web_front  |     errno: -111,
-[2Kaeye_web_front  |     code: 'ECONNREFUSED',
-[2Kaeye_web_front  |     syscall: 'connect',
-[2Kaeye_web_front  |     address: '::1',
-[2Kaeye_web_front  |     port: 3000
-[2Kaeye_web_front  |   },
-[2Kaeye_web_front  |   digest: '3576187290'
-[2Kaeye_web_front  | }
-[2Kaeye_web_front  | TypeError: fetch failed
-[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
-[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
-[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED ::1:3000
-[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
-[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
-[2Kaeye_web_front  |     errno: -111,
-[2Kaeye_web_front  |     code: 'ECONNREFUSED',
-[2Kaeye_web_front  |     syscall: 'connect',
-[2Kaeye_web_front  |     address: '::1',
-[2Kaeye_web_front  |     port: 3000
-[2Kaeye_web_front  |   },
-[2Kaeye_web_front  |   digest: '3576187290'
-[2Kaeye_web_front  | }
-[2Kaeye_web_front  | TypeError: fetch failed
-[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
-[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
-[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED ::1:3000
-[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
-[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
-[2Kaeye_web_front  |     errno: -111,
-[2Kaeye_web_front  |     code: 'ECONNREFUSED',
-[2Kaeye_web_front  |     syscall: 'connect',
-[2Kaeye_web_front  |     address: '::1',
-[2Kaeye_web_front  |     port: 3000
-[2Kaeye_web_front  |   },
-[2Kaeye_web_front  |   digest: '3576187290'
-[2Kaeye_web_front  | }
 [2Kaeye_web_front  |    Generating static pages (5/11) 
+[2Kaeye_web_front  | TypeError: fetch failed
+[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
+[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED 0.0.0.0:3000
+[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
+[2Kaeye_web_front  |     errno: -111,
+[2Kaeye_web_front  |     code: 'ECONNREFUSED',
+[2Kaeye_web_front  |     syscall: 'connect',
+[2Kaeye_web_front  |     address: '0.0.0.0',
+[2Kaeye_web_front  |     port: 3000
+[2Kaeye_web_front  |   },
+[2Kaeye_web_front  |   digest: '3576187290'
+[2Kaeye_web_front  | }
+[2Kaeye_web_front  | TypeError: fetch failed
+[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
+[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED 0.0.0.0:3000
+[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
+[2Kaeye_web_front  |     errno: -111,
+[2Kaeye_web_front  |     code: 'ECONNREFUSED',
+[2Kaeye_web_front  |     syscall: 'connect',
+[2Kaeye_web_front  |     address: '0.0.0.0',
+[2Kaeye_web_front  |     port: 3000
+[2Kaeye_web_front  |   },
+[2Kaeye_web_front  |   digest: '3576187290'
+[2Kaeye_web_front  | }
+[2Kaeye_web_front  | TypeError: fetch failed
+[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
+[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED 0.0.0.0:3000
+[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
+[2Kaeye_web_front  |     errno: -111,
+[2Kaeye_web_front  |     code: 'ECONNREFUSED',
+[2Kaeye_web_front  |     syscall: 'connect',
+[2Kaeye_web_front  |     address: '0.0.0.0',
+[2Kaeye_web_front  |     port: 3000
+[2Kaeye_web_front  |   },
+[2Kaeye_web_front  |   digest: '3576187290'
+[2Kaeye_web_front  | }
+[2Kaeye_web_front  | TypeError: fetch failed
+[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
+[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED 0.0.0.0:3000
+[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
+[2Kaeye_web_front  |     errno: -111,
+[2Kaeye_web_front  |     code: 'ECONNREFUSED',
+[2Kaeye_web_front  |     syscall: 'connect',
+[2Kaeye_web_front  |     address: '0.0.0.0',
+[2Kaeye_web_front  |     port: 3000
+[2Kaeye_web_front  |   },
+[2Kaeye_web_front  |   digest: '3576187290'
+[2Kaeye_web_front  | }
+[2Kaeye_web_front  | TypeError: fetch failed
+[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
+[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED 0.0.0.0:3000
+[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
+[2Kaeye_web_front  |     errno: -111,
+[2Kaeye_web_front  |     code: 'ECONNREFUSED',
+[2Kaeye_web_front  |     syscall: 'connect',
+[2Kaeye_web_front  |     address: '0.0.0.0',
+[2Kaeye_web_front  |     port: 3000
+[2Kaeye_web_front  |   },
+[2Kaeye_web_front  |   digest: '3576187290'
+[2Kaeye_web_front  | }
+[2Kaeye_web_front  | TypeError: fetch failed
+[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
+[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED 0.0.0.0:3000
+[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
+[2Kaeye_web_front  |     errno: -111,
+[2Kaeye_web_front  |     code: 'ECONNREFUSED',
+[2Kaeye_web_front  |     syscall: 'connect',
+[2Kaeye_web_front  |     address: '0.0.0.0',
+[2Kaeye_web_front  |     port: 3000
+[2Kaeye_web_front  |   },
+[2Kaeye_web_front  |   digest: '3576187290'
+[2Kaeye_web_front  | }
+[2Kaeye_web_front  | TypeError: fetch failed
+[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
+[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED 0.0.0.0:3000
+[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
+[2Kaeye_web_front  |     errno: -111,
+[2Kaeye_web_front  |     code: 'ECONNREFUSED',
+[2Kaeye_web_front  |     syscall: 'connect',
+[2Kaeye_web_front  |     address: '0.0.0.0',
+[2Kaeye_web_front  |     port: 3000
+[2Kaeye_web_front  |   },
+[2Kaeye_web_front  |   digest: '3576187290'
+[2Kaeye_web_front  | }
+[2Kaeye_web_front  | TypeError: fetch failed
+[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
+[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED 0.0.0.0:3000
+[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
+[2Kaeye_web_front  |     errno: -111,
+[2Kaeye_web_front  |     code: 'ECONNREFUSED',
+[2Kaeye_web_front  |     syscall: 'connect',
+[2Kaeye_web_front  |     address: '0.0.0.0',
+[2Kaeye_web_front  |     port: 3000
+[2Kaeye_web_front  |   },
+[2Kaeye_web_front  |   digest: '3576187290'
+[2Kaeye_web_front  | }
 [2Kaeye_web_front  |    Generating static pages (8/11) 
 [2Kaeye_web_front  | TypeError: fetch failed
 [2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
 [2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
-[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED ::1:3000
+[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED 0.0.0.0:3000
 [2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
 [2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
 [2Kaeye_web_front  |     errno: -111,
 [2Kaeye_web_front  |     code: 'ECONNREFUSED',
 [2Kaeye_web_front  |     syscall: 'connect',
-[2Kaeye_web_front  |     address: '::1',
+[2Kaeye_web_front  |     address: '0.0.0.0',
 [2Kaeye_web_front  |     port: 3000
 [2Kaeye_web_front  |   },
 [2Kaeye_web_front  |   digest: '3576187290'
@@ -196,13 +180,13 @@ Attaching to aeye_web_back, aeye_web_front, aeye_web_nginx
 [2Kaeye_web_front  | TypeError: fetch failed
 [2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
 [2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
-[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED ::1:3000
+[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED 0.0.0.0:3000
 [2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
 [2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
 [2Kaeye_web_front  |     errno: -111,
 [2Kaeye_web_front  |     code: 'ECONNREFUSED',
 [2Kaeye_web_front  |     syscall: 'connect',
-[2Kaeye_web_front  |     address: '::1',
+[2Kaeye_web_front  |     address: '0.0.0.0',
 [2Kaeye_web_front  |     port: 3000
 [2Kaeye_web_front  |   },
 [2Kaeye_web_front  |   digest: '3576187290'
@@ -210,13 +194,13 @@ Attaching to aeye_web_back, aeye_web_front, aeye_web_nginx
 [2Kaeye_web_front  | TypeError: fetch failed
 [2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
 [2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
-[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED ::1:3000
+[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED 0.0.0.0:3000
 [2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
 [2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
 [2Kaeye_web_front  |     errno: -111,
 [2Kaeye_web_front  |     code: 'ECONNREFUSED',
 [2Kaeye_web_front  |     syscall: 'connect',
-[2Kaeye_web_front  |     address: '::1',
+[2Kaeye_web_front  |     address: '0.0.0.0',
 [2Kaeye_web_front  |     port: 3000
 [2Kaeye_web_front  |   },
 [2Kaeye_web_front  |   digest: '3576187290'
@@ -224,69 +208,13 @@ Attaching to aeye_web_back, aeye_web_front, aeye_web_nginx
 [2Kaeye_web_front  | TypeError: fetch failed
 [2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
 [2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
-[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED ::1:3000
+[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED 0.0.0.0:3000
 [2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
 [2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
 [2Kaeye_web_front  |     errno: -111,
 [2Kaeye_web_front  |     code: 'ECONNREFUSED',
 [2Kaeye_web_front  |     syscall: 'connect',
-[2Kaeye_web_front  |     address: '::1',
-[2Kaeye_web_front  |     port: 3000
-[2Kaeye_web_front  |   },
-[2Kaeye_web_front  |   digest: '3576187290'
-[2Kaeye_web_front  | }
-[2Kaeye_web_front  | TypeError: fetch failed
-[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
-[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
-[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED ::1:3000
-[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
-[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
-[2Kaeye_web_front  |     errno: -111,
-[2Kaeye_web_front  |     code: 'ECONNREFUSED',
-[2Kaeye_web_front  |     syscall: 'connect',
-[2Kaeye_web_front  |     address: '::1',
-[2Kaeye_web_front  |     port: 3000
-[2Kaeye_web_front  |   },
-[2Kaeye_web_front  |   digest: '3576187290'
-[2Kaeye_web_front  | }
-[2Kaeye_web_front  | TypeError: fetch failed
-[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
-[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
-[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED ::1:3000
-[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
-[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
-[2Kaeye_web_front  |     errno: -111,
-[2Kaeye_web_front  |     code: 'ECONNREFUSED',
-[2Kaeye_web_front  |     syscall: 'connect',
-[2Kaeye_web_front  |     address: '::1',
-[2Kaeye_web_front  |     port: 3000
-[2Kaeye_web_front  |   },
-[2Kaeye_web_front  |   digest: '3576187290'
-[2Kaeye_web_front  | }
-[2Kaeye_web_front  | TypeError: fetch failed
-[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
-[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
-[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED ::1:3000
-[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
-[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
-[2Kaeye_web_front  |     errno: -111,
-[2Kaeye_web_front  |     code: 'ECONNREFUSED',
-[2Kaeye_web_front  |     syscall: 'connect',
-[2Kaeye_web_front  |     address: '::1',
-[2Kaeye_web_front  |     port: 3000
-[2Kaeye_web_front  |   },
-[2Kaeye_web_front  |   digest: '3576187290'
-[2Kaeye_web_front  | }
-[2Kaeye_web_front  | TypeError: fetch failed
-[2Kaeye_web_front  |     at node:internal/deps/undici/undici:12618:11
-[2Kaeye_web_front  |     at process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
-[2Kaeye_web_front  |   cause: Error: connect ECONNREFUSED ::1:3000
-[2Kaeye_web_front  |       at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
-[2Kaeye_web_front  |       at TCPConnectWrap.callbackTrampoline (node:internal/async_hooks:128:17) {
-[2Kaeye_web_front  |     errno: -111,
-[2Kaeye_web_front  |     code: 'ECONNREFUSED',
-[2Kaeye_web_front  |     syscall: 'connect',
-[2Kaeye_web_front  |     address: '::1',
+[2Kaeye_web_front  |     address: '0.0.0.0',
 [2Kaeye_web_front  |     port: 3000
 [2Kaeye_web_front  |   },
 [2Kaeye_web_front  |   digest: '3576187290'
@@ -325,34 +253,7 @@ Attaching to aeye_web_back, aeye_web_front, aeye_web_nginx
 [2Kaeye_web_front  | > next start
 [2Kaeye_web_front  | 
 [2Kaeye_web_front  |   ▲ Next.js 14.2.5
-[2Kaeye_web_front  |   - Local:        http://localhost:3000
+[2Kaeye_web_front  |   - Local:        http://aeye_web_front:3000
 [2Kaeye_web_front  | 
 [2Kaeye_web_front  |  ✓ Starting...
-[2Kaeye_web_front  |  ✓ Ready in 284ms
-[2Kaeye_web_front  |  ⚠ For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended. Run 'npm i sharp', and Next.js will use it automatically for Image Optimization.
-[2Kaeye_web_front  | Read more: https://nextjs.org/docs/messages/sharp-missing-in-production
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET / HTTP/1.1" 307 19 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET /patients HTTP/1.1" 200 4555 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET /_next/static/chunks/main-app-6de3c3100b91a0a9.js HTTP/1.1" 200 462 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET /_next/static/css/cad959e082d57397.css HTTP/1.1" 200 7342 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET /_next/static/chunks/webpack-0d6f2045754d72b4.js HTTP/1.1" 200 1761 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET /_next/static/chunks/23-978e7dd85b364cd5.js HTTP/1.1" 200 31675 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET /_next/static/chunks/fd9d1056-c176ba62bfa905c4.js HTTP/1.1" 200 53829 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET /_next/static/chunks/568-84608a48cb211882.js HTTP/1.1" 200 11678 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET /_next/static/chunks/776-2d44cd5441346094.js HTTP/1.1" 200 8284 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET /_next/static/chunks/356-409751b9ed9724a0.js HTTP/1.1" 200 7109 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET /_next/static/chunks/app/(main)/patients/page-71e4f32d1cb06b54.js HTTP/1.1" 200 1761 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET /_next/static/chunks/app/(main)/layout-9011164ba00fccd6.js HTTP/1.1" 200 1832 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET /_next/static/chunks/853-3ee43780a7efabd9.js HTTP/1.1" 200 27010 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:56 +0000] "GET /_next/static/media/ff840cfebfb63b0c-s.p.woff2 HTTP/1.1" 200 2057688 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:57 +0000] "GET /_next/image?url=%2Fimages%2Flogo-compound-horizontal.png&w=2048&q=75 HTTP/1.1" 200 2904 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:45:57 +0000] "GET /favicon.ico HTTP/1.1" 200 15419 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:46:00 +0000] "GET /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1534528741775-53994a69daeb%3Fq%3D80%26w%3D2564%26auto%3Dformat%26fit%3Dcrop%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D&w=2048&q=75 HTTP/1.1" 200 138584 "http://localhost/patients" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:46:10 +0000] "GET / HTTP/1.1" 307 19 "-" "PostmanRuntime/7.40.0" "-"
-[2Kaeye_web_front  | redireting to signin page
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:46:11 +0000] "GET /patients HTTP/1.1" 307 17 "http://127.0.0.1:80/" "PostmanRuntime/7.40.0" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:46:11 +0000] "GET /signin HTTP/1.1" 200 3660 "http://127.0.0.1:80/patients" "PostmanRuntime/7.40.0" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:46:21 +0000] "GET / HTTP/1.1" 307 19 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:46:21 +0000] "GET /patients HTTP/1.1" 200 4555 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:46:26 +0000] "GET / HTTP/1.1" 307 19 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
-[2Kaeye_web_nginx  | 192.168.65.1 - - [03/Aug/2024:10:46:26 +0000] "GET /patients HTTP/1.1" 200 4556 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" "-"
+[2Kaeye_web_front  |  ✓ Ready in 252ms

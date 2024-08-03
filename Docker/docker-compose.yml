@@ -23,7 +23,7 @@ services:
     build:
       context: ..
       dockerfile: Docker/Django/Dockerfile
-    image: aeye_web_back:1.0
+    image: yoonchul005/aeye_web_back:1.0
     container_name: aeye_web_back
     ports:
       - "8000:8000"
@@ -36,7 +36,7 @@ services:
     build:
       context: ..
       dockerfile: Docker/Next_js/Dockerfile
-    image: aeye_web_front:1.0
+    image: yoonchul005/aeye_web_front:1.0
     container_name:  aeye_web_front
     ports:
       - "3000:3000"
