@@ -1,36 +1,48 @@
-name: Django Back test Django CI
+name: CI Pipeline
 
 on:
   push:
-    branches: [ "test" ]
-
-permissions:
-  contents: read
+    branches:
+      - test
+  pull_request:
+    branches:
+      - test
 
 jobs:
-  continuous-integration:
-  
-    runs-on: ubuntu-20.04
+  test:
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Check out repository
+    - name: Checkout code
       uses: actions/checkout@v3
-    
-    - name: Set up Python 3.6
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.6.14
 
-    - name : Create virtual environment
-      run: python3.6 -m venv venv
-      
-    - name: Install Dependecies
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8' 
+
+    - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r dependencies.txt
-        pip install -r dependencies_web_Front.txt
 
-    - name: Start Test
-      run : |
+    - name: Run tests
+      run: |
         pytest
 
+  deploy:
+    if: success() && github.ref == 'refs/heads/test'
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Merge to main branch
+      run: |
+        git config --global user.name "${{ github.actor }}"
+        git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+        git checkout main
+        git merge --no-ff ${{ github.sha }}
+        git push origin main
